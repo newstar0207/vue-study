@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{message.greetings}}, {{message.name}}</h1>
+        <button> 
+            <a v-bind:href= 'address'>NAVER</a>
+        </button>
+
+        <p v-if='age>= 20'>Adult</p>
+        <p v-else-if="age < 20 && age > 12">Teenager</p>
+        <p v-else>Kid</p>
+
+        <ul> <!-- unordered list-->
+            <li v-for='(todo, index) in todos'>{{index}}, {{ todo.text }}</li>
+        </ul>
+
+        <!-- 주어진 데이터를 이용하여 동적으로 움직일수 있게 하는것 ex puge -->
+        <div v-for='todo in todos'>
+            <p>{{todo.text}}</p>
+        </div>
+
+        <div v-for='(value, name) in user'>
+            <p>{{name}} - {{value}}</p>
+        </div>
+
+        <div v-for='n in 10'>
+            <p>{{n}}</p>
+        </div>
+
+        <div> <!-- v-on:click === @click / : -> 바인드, @ -> 이벤트 -->
+            <button v-on:click="addCounter">+</button>
+            <button v-on:click="removeCounter">-</button>
+            <p>{{counter}}</p>
+        </div>
+
+        <p>{{message}}</p>
+        <ul>
+            <li v-for="user in users">
+                <p @click="sayHi(user.name)">{{ user.name}} </p>
+            </li>
+        </ul>
+
+        <div>
+            <input v-model ="comment">
+            <p>{{comment}}</p>
+        </div>
+
+        <div>
+            <span>여러줄을 가지는 메시지</span>
+            <p style="white-space: pre-line;">{{comment}}</p>
+            <br>
+            <textarea v-model="comment" placeholder="여러줄을 입력해 보아요"></textarea>
+        </div>
+
+        <div>
+            <input type="checkbox" id="checkbox_single" v-model="value">
+            <label for="checkbox_single">{{ value }}</label>
+        </div>
+
+        <div v-for="value in values">
+            <input type="checkbox" id="checkbox" value="checkbox" v-model='value'>
+            <label for="checkbox">checkbox</label>
+        </div>
+
+        <div>
+            <input v-model.lazy = 'value2'>
+            <p>{{value2}}</p>
+            <input v-model ="value3">
+            <p>{{value3}}</p>
+        </div>
+
+        <div>
+            <input v-model.number='age'>
+            <p>{{age}}</p>
+        </div>
+
+        <div>
+            <p>{{user_info}}</p>
+        </div>
+
+        <div>
+            <input v-model.number = 'age'>
+            <p>{{user_age}}</p>
+        </div>
+
+        <div>
+            <hello name='user'></hello>
+            <hello name='students'></hello>
+        </div>
+
+        <div>
+            <hello name='user'></hello>
+            <hello name='students'></hello>
+            <local-hello>하이하이</local-hello>
+        </div>
+
+        <div>
+            <h3>{{totalCount}}</h3>
+            <add @event-add='updateTotal'></add><br>
+            <add @event-add='updateTotal'></add><br>
+            <add @event-add='updateTotal'></add><br>
+        </div>
+
+    </div>  
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="./hello.js"></script>
+</body>
+</html> 
