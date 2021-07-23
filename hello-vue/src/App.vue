@@ -4,15 +4,18 @@
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <h1>My Todo App!</h1>
     <!-- <TodoList></TodoList> -->
-    <Gugudan></Gugudan>
+    <!-- <Gugudan></Gugudan> -->
+    <WordRelay></WordRelay>
+    <WordRelay></WordRelay>
   </div>
 </template>
 
 <script>
-import Gugudan from './components/Gugudan.vue'
+// import Gugudan from './components/Gugudan.vue'
 // import HelloWorld from './components/HelloWorld.vue'
 // import TodoList from './components/TodoList/TodoList/TodoList.vue'
 // import Test from './components/TodoList/Test.vue'
+import WordRelay from './components/WordRelay.vue'
 
 
 export default {
@@ -20,7 +23,8 @@ export default {
   components: {
     // HelloWorld
     // TodoList,
-    Gugudan,
+    // Gugudan,
+    WordRelay,
   }
 
 }
