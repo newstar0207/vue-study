@@ -12,9 +12,12 @@
 
 <script>
 export default {
+    props : [
+        'startWord',
+    ],
     data() {
         return {
-            word: '새별',
+            word: this.startWord,
             result : '',
             value : '',
         }

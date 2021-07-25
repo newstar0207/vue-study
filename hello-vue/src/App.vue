@@ -2,11 +2,12 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <h1>My Todo App!</h1>
+    <!-- <h1>My Todo App!</h1> -->
     <!-- <TodoList></TodoList> -->
     <!-- <Gugudan></Gugudan> -->
-    <WordRelay></WordRelay>
-    <WordRelay></WordRelay>
+    <!-- <WordRelay start-word="안녕"></WordRelay> -->
+    <!-- <WordRelay start-word="hello"></WordRelay> -->
+    <ResponseCheck></ResponseCheck>
   </div>
 </template>
 
@@ -15,7 +16,8 @@
 // import HelloWorld from './components/HelloWorld.vue'
 // import TodoList from './components/TodoList/TodoList/TodoList.vue'
 // import Test from './components/TodoList/Test.vue'
-import WordRelay from './components/WordRelay.vue'
+// import WordRelay from './components/WordRelay.vue'
+import ResponseCheck from './components/ResponseCheck.vue'
 
 
 export default {
@@ -24,7 +26,8 @@ export default {
     // HelloWorld
     // TodoList,
     // Gugudan,
-    WordRelay,
+    // WordRelay,
+    ResponseCheck
   }
 
 }
