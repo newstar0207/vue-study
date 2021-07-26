@@ -8,18 +8,20 @@
     <!-- <WordRelay start-word="안녕"></WordRelay> -->
     <!-- <WordRelay start-word="hello"></WordRelay> -->
     <!-- <ResponseCheck></ResponseCheck> -->
-    <RockScissorsPaper></RockScissorsPaper>
+    <!-- <RockScissorsPaper></RockScissorsPaper> -->
+    <lotto-generator></lotto-generator>
   </div>
 </template>
 
 <script>
+import LottoGenerator from './components/LottoGenerator.vue'
 // import Gugudan from './components/Gugudan.vue'
 // import HelloWorld from './components/HelloWorld.vue'
 // import TodoList from './components/TodoList/TodoList/TodoList.vue'
 // import Test from './components/TodoList/Test.vue'
 // import WordRelay from './components/WordRelay.vue'
 // import ResponseCheck from './components/ResponseCheck.vue'
-import RockScissorsPaper from './components/RockScissorsPaper.vue'
+// import RockScissorsPaper from './components/RockScissorsPaper.vue'
 
 
 
@@ -31,7 +33,8 @@ export default {
     // Gugudan,
     // WordRelay,
     // ResponseCheck
-    RockScissorsPaper
+    // RockScissorsPaper, 
+    LottoGenerator
   }
 
 }
