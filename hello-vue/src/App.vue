@@ -7,7 +7,8 @@
     <!-- <Gugudan></Gugudan> -->
     <!-- <WordRelay start-word="안녕"></WordRelay> -->
     <!-- <WordRelay start-word="hello"></WordRelay> -->
-    <ResponseCheck></ResponseCheck>
+    <!-- <ResponseCheck></ResponseCheck> -->
+    <RockScissorsPaper></RockScissorsPaper>
   </div>
 </template>
 
@@ -17,7 +18,9 @@
 // import TodoList from './components/TodoList/TodoList/TodoList.vue'
 // import Test from './components/TodoList/Test.vue'
 // import WordRelay from './components/WordRelay.vue'
-import ResponseCheck from './components/ResponseCheck.vue'
+// import ResponseCheck from './components/ResponseCheck.vue'
+import RockScissorsPaper from './components/RockScissorsPaper.vue'
+
 
 
 export default {
@@ -27,7 +30,8 @@ export default {
     // TodoList,
     // Gugudan,
     // WordRelay,
-    ResponseCheck
+    // ResponseCheck
+    RockScissorsPaper
   }
 
 }
