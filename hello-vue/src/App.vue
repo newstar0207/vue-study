@@ -16,7 +16,7 @@
 
 <script>
 // import LottoGenerator from './components/LottoGenerator.vue'
-import TicTacToe from './components/TicTacToe.vue'
+import TicTacToe from './components/TicTacToeVuex/TicTacToe.vue'
 // import Gugudan from './components/Gugudan.vue'
 // import HelloWorld from './components/HelloWorld.vue'
 // import TodoList from './components/TodoList/TodoList/TodoList.vue'
