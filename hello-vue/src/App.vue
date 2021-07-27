@@ -9,12 +9,14 @@
     <!-- <WordRelay start-word="hello"></WordRelay> -->
     <!-- <ResponseCheck></ResponseCheck> -->
     <!-- <RockScissorsPaper></RockScissorsPaper> -->
-    <lotto-generator></lotto-generator>
+    <!-- <lotto-generator></lotto-generator> -->
+    <tic-tac-toe></tic-tac-toe>
   </div>
 </template>
 
 <script>
-import LottoGenerator from './components/LottoGenerator.vue'
+// import LottoGenerator from './components/LottoGenerator.vue'
+import TicTacToe from './components/TicTacToe.vue'
 // import Gugudan from './components/Gugudan.vue'
 // import HelloWorld from './components/HelloWorld.vue'
 // import TodoList from './components/TodoList/TodoList/TodoList.vue'
@@ -34,7 +36,8 @@ export default {
     // WordRelay,
     // ResponseCheck
     // RockScissorsPaper, 
-    LottoGenerator
+    // LottoGenerator,
+    TicTacToe,
   }
 
 }
