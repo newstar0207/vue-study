@@ -1,50 +1,31 @@
 <template>
-  <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <!-- <h1>My Todo App!</h1> -->
-    <!-- <TodoList></TodoList> -->
-    <!-- <Gugudan></Gugudan> -->
-    <!-- <WordRelay start-word="안녕"></WordRelay> -->
-    <!-- <WordRelay start-word="hello"></WordRelay> -->
-    <!-- <ResponseCheck></ResponseCheck> -->
-    <!-- <RockScissorsPaper></RockScissorsPaper> -->
-    <!-- <lotto-generator></lotto-generator> -->
-    <mine-sweeper></mine-sweeper>
-  </div>
+    <div id="app">
+         <div>
+            <router-link to="/game/index">게임매쳐</router-link>
+            <router-link to="/game/gugudan">구구단</router-link>
+            <router-link to="/game/lotto-generator">로또</router-link>
+            <router-link to="/game/response-check">반응체크</router-link>
+            <router-link to="/game/word-relay">끝말잇기</router-link>
+         </div>
+         <router-view></router-view>
+    </div>              
 </template>
-
 <script>
-// import LottoGenerator from './components/LottoGenerator.vue'
-import MineSweeper from './components/MineSweeper/MineSweeper.vue'
-// import Gugudan from './components/Gugudan.vue'
-// import HelloWorld from './components/HelloWorld.vue'
-// import TodoList from './components/TodoList/TodoList/TodoList.vue'
-// import Test from './components/TodoList/Test.vue'
-// import WordRelay from './components/WordRelay.vue'
-// import ResponseCheck from './components/ResponseCheck.vue'
-// import RockScissorsPaper from './components/RockScissorsPaper.vue'
-
-
+// import router from './vue-router/router';
 
 export default {
-  name: 'App',
-  components: {
-    // HelloWorld
-    // TodoList,
-    // Gugudan,
-    // WordRelay,
-    // ResponseCheck
-    // RockScissorsPaper, 
-    // LottoGenerator,
-    // TicTacToe,
-    MineSweeper,
-  }
-
+    // router,
 }
-
 </script>
-
 <style>
+    table {
+        border-collapse: collapse;
+    }
 
+    td{
+        border: 1px solid black;
+        width:  40px;
+        height: 40px;
+        text-align: center;
+    }
 </style>
