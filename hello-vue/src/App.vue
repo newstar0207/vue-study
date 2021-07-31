@@ -10,13 +10,13 @@
     <!-- <ResponseCheck></ResponseCheck> -->
     <!-- <RockScissorsPaper></RockScissorsPaper> -->
     <!-- <lotto-generator></lotto-generator> -->
-    <tic-tac-toe></tic-tac-toe>
+    <mine-sweeper></mine-sweeper>
   </div>
 </template>
 
 <script>
 // import LottoGenerator from './components/LottoGenerator.vue'
-import TicTacToe from './components/TicTacToeVuex/TicTacToe.vue'
+import MineSweeper from './components/MineSweeper/MineSweeper.vue'
 // import Gugudan from './components/Gugudan.vue'
 // import HelloWorld from './components/HelloWorld.vue'
 // import TodoList from './components/TodoList/TodoList/TodoList.vue'
@@ -37,7 +37,8 @@ export default {
     // ResponseCheck
     // RockScissorsPaper, 
     // LottoGenerator,
-    TicTacToe,
+    // TicTacToe,
+    MineSweeper,
   }
 
 }
