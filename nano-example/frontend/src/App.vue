@@ -14,6 +14,7 @@
           transition="scale-transition"
           width="40"
         />
+
         <v-img
           alt="Vuetify Name"
           class="shrink mt-1 hidden-sm-and-down"
@@ -24,39 +25,28 @@
         />
       </div>
 
-      <!-- 가운데 공간이 생기게 해줌 -->
-      <v-spacer></v-spacer> 
+      <v-spacer></v-spacer>
 
-      <v-btn to='/' text>
-        <v-icon>mdi-open-in-new</v-icon>
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
         <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
-      <v-btn to="/menus" text><span class="mr-2">Menus</span></v-btn>
-      <v-btn to="/events" text><span class="mr-2">Events</span></v-btn>
-      <v-btn to="/reviews" text><span class="mr-2">reviews</span></v-btn>
     </v-app-bar>
 
     <v-main>
-      <v-container>
-        <v-row>
-          <v-col>
-            <router-view></router-view>
-          </v-col>
-        </v-row>
-      </v-container>
+      <router-view/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
-
-  components: {
-    // HelloWorld,
-  },
 
   data: () => ({
     //
