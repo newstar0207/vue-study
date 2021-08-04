@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:bookId', (req, res) => {
+    console.log('afdasd');
     const bookId = req.params.bookId;
     let book = books.find(element => element.bookId == bookId);
     res.json(book);

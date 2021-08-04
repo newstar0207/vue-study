@@ -10,6 +10,6 @@ export default new VueRouter({
     mode: 'history',
     routes: [
         { path: '/' , component: Home, props:(route) => ({bookId: route.query.bookId})},
-        { path: '/books/:bookId', component: Book, props:true},
+        { path: '/:bookId', component: Book, props:true},
     ]
 });

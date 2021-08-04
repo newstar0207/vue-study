@@ -1,18 +1,23 @@
 <template>
-  <div class="d-flex">
-    <v-card class="mx-auto pa-4" width="260" height="330" v-for="brief in briefs" :key="brief.bookId">
-      <img v-bind:src="brief.cover" height="200px" width="230"/>
-      <v-card-title><a v-bind:href='"/books/" + brief.bookId'>{{ brief.title }}</a></v-card-title>
+  <div class="d-flex flex-wrap justify-center">
+    <v-card class="mx-2 my-2"  width="270" height="300" v-for="brief in briefs" :key="brief.bookId">
+      <div class="d-flex mx-16">
+        <v-img :src="brief.cover" height="200" width="130" ></v-img>
+      </div>
+      
+      <v-card-title>
+        <router-link  v-bind:to='"/" + brief.bookId'>{{ brief.title }}</router-link>
+      </v-card-title>
       <v-card-subtitle>
         {{ brief.author }}
       </v-card-subtitle>
     </v-card>
     
-  </div>
+  </div>  
 </template>  
-
+ 
 <script>
-// '/' 로 책 리스트를 받아와 책 리스트 화면을 구성함
+// '/' 로 책 리스트를 받아와 책 리스트 화면 을 구성함
   // import HelloWorld from '../components/HelloWorld'
   import axios from 'axios';
 
@@ -31,3 +36,13 @@
     }
   }
 </script>
+
+<style>
+  /* .align {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  } */
+  
+  
+</style>
