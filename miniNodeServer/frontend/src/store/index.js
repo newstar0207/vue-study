@@ -26,13 +26,18 @@ export default new Vuex.Store({
             localStorage.setItem('accessToken', state.accessToken);
         },
         signout(state){
-            state.accessToken = null;
+            state.accessToken = null;   
             localStorage.removeItem('accessToken');
             location.reload(); // 재호출
         },
         getAccessToken(state){
             state.accessToken = localStorage.getItem('accessToken');
-        }
+            // return state.accessToken;
+        },
+        loginFailed(state){
+            state.accessToken= null;
+            localStorage.removeItem('accessToken');
+        },
     },
     actions: { // 비동기적 로직을 정의, 비동기 작업 수행시 dispatch 호출
         signin({commit}, payload){
@@ -43,8 +48,9 @@ export default new Vuex.Store({
                     commit('signin', { accessToken: response.data.token})
                 }
             })
-            .catch(() => { // 에러 발생시 로그아웃처리
-                commit('signout')
+            .catch((error) => { // 에러 발생시 로그아웃처리
+                commit('loginFailed')
+                return Promise.reject(error)
             })
         },
         signup(context,payload){
@@ -56,18 +62,9 @@ export default new Vuex.Store({
                 }
             })
             .catch(() => {
-                console.log('signup errorsdf')
+                console.log('signup error')
             })
         },
-        getMemos(context){
-            return axios.get('/api/memos')
-            .then(response => {
-                if(response.status == 200){
-                    return;
-                }
-            }).catch(() => {
-                console.log('getmemos error   ');
-            })
-        }
+        
     }
 })

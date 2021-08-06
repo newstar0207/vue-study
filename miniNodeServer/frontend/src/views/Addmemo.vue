@@ -1,28 +1,43 @@
 <template>
     <div>
-        <h1>addmemo</h1>
-        <form @submit.prevent="addMemo(title, content)">
-            <input type="text" v-model="title" placeholder="Title">
-            <input type="text" v-model="content" placeholder="Content">
-            <input type="file" placeholder="File">
-            <button type="submit"></button>
-        </form>  <!--@submit.prevent="" -> form 태그의 기본 동작을 막음 -->      
+        <input type="text" v-model="title" placeholder="title"><br>
+        <input type="text" v-model="content" placeholder="content"><br>
+        <input type="file" @change="selectFile" ref="file"><br> <!-- @change 는 값이 변하는걸 감지한 이후에 실행됨-->
+        <button @click="addMemo">Save</button>
     </div>
 </template>
 <script>
+import memoApi from '../apis/memos'
+
 export default {
     data(){
         return {
             title: '',
             content: '',
             file: '',
-            originalFileName: '',
         }
     },
     methods: {
-        addMemo(title, content) {
-            console.log(title,content)
+        selectFile(){
+            this.file = this.$refs.file.files[0]
+        },
+        addMemo() {
+            // axios.post 는 그냥 사용하면 form 데이터 형식을 사용할 수 없어 new FormData 를 이용하여 form 형식으로 데이터를 보냄
+            const data = new FormData();
+            data.append('title', this.title);
+            data.append('content', this.content);
+            data.append('file', this.file);
+
+            memoApi.addMemo(data)
+            .then(response => {
+                console.log(response.status)
+                this.$router.push('/')
+            })
+            .catch(() => {
+                this.$router.push('/')
+            }) 
         }
+        
     },
 }
 </script>

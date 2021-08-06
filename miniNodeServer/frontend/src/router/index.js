@@ -10,10 +10,10 @@ Vue.use(VueRouter)
 
 const routes = [
   { path: '/', name: 'Home', component: Home, meta: { requiresAuth: true}},
-  { path: '/signup', name: 'Signup', component: Signup},
-  { path: '/memos', name: 'memo', component: Addmemo, meta: { requiresAuth: true}},  
+  { path: '/add', name: 'Add', component: Addmemo, meta: { requiresAuth: true}},  
   // { path: '/memos/:memoId', name: 'Read', component: Read, meta: { requiresAuth: true}},
   { path: '/signin', name:'Signin', component: Signin},
+  { path: '/signup', name: 'Signup', component: Signup},
 ]
 
 const router = new VueRouter({
