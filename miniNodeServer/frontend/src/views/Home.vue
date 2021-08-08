@@ -1,31 +1,31 @@
 <template>
   <div>
-    <router-link to='/add'>글 작성하기</router-link>
+    <!-- <router-link to='/add'>글 작성하기</router-link> --> 
     <div class="mx-auto d-flex flex-wrap">
-      <v-card v-for="memo in memos" width="230" height="230" :key="memo.memoid" class="mx-2 my-2">
+      <v-card v-for="memo in memos" width="230" height="230" @dblclick="onClickMemo(memo.memoid)" :key="memo.memoid" class="mx-2 my-2">
         <v-card-text>
-          <div>{{ memo.savedTime }}</div>
-          <p class="text-h4 text--primary">
+          <!-- <div>{{ memo.savedTime }}</div> -->
+          <p class="text-h6 text--primary">
             {{ memo.title }}
           </p>
-          <p>content</p>
+          <!-- <p>content</p>
           <div class="text--primary">
             {{memo.content}}
-          </div>
+          </div> -->
         </v-card-text>
-        <v-card-actions>
+        <!-- <v-card-actions>
           <v-btn text color="deep-purple accent-4">
             update
           </v-btn>
           <v-btn text color="deep-purple accent-4">
             delete
           </v-btn>
-        </v-card-actions>
+        </v-card-actions> -->
      </v-card>
-  </div>
+    </div>
+    
   </div> 
 </template>
-
 <script>
 import memoApi from '../apis/memos'
 
@@ -45,8 +45,15 @@ import memoApi from '../apis/memos'
         
       })
     },
-
-    components: {
+    methods: {
+      onClickMemo(memoid){
+        console.log(memoid);
+       this.$router.push({name : 'Read', params : { memoId:  memoid}});
+      }
     },
   }
 </script>
+
+<style>
+  
+</style>

@@ -20,5 +20,19 @@ export default{
             method: 'post',
             data,
         }) 
+    },
+    putMemo(memoId,data){
+        return sendMultipartRequest({
+            url: '/api/memos/' + memoId,
+            method: 'put',
+            data,
+        })
+    },
+    deleteMemo(memoId){
+        return sendMultipartRequest({
+            url: '/api/memos/' + memoId,
+            method: 'delete',
+        })
     }
+    
 }

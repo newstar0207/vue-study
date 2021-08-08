@@ -27,6 +27,10 @@
 
       <v-spacer></v-spacer>
 
+      <v-btn href="/add" text>add memo</v-btn>
+
+      <!-- <router-link to="/add"><v-btn>add memo</v-btn></router-link> -->
+
       <v-btn
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
         target="_blank"
