@@ -54,7 +54,6 @@ router.get('/:memoid', authMiddleware, function(req, res, next){
 });
 
 router.put('/:memoid', [authMiddleware, upload.single('file')] , function(req, res, next){
-  console.log('1111111111111111111111111111111111111111111111111111111111111111');
   const memo = req.body;
   memo.title=memo.title.replace(/\"/g, "")
   memo.content=memo.content.replace(/\"/g, "")

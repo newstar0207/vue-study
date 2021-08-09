@@ -5,15 +5,17 @@ import Addmemo from '../views/Addmemo.vue'
 import Read from '../views/ReadMemo.vue'
 import Signin from '../views/Signin.vue'
 import Signup from '../views/Signup.vue'
+import Users from '../views/Users.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', name: 'Home', component: Home, meta: { requiresAuth: true} /*props:(route) => ({memoId: route.query.memoId})*/},
+  { path: '/', name: 'Home', component: Home /*, meta: { requiresAuth: true} props:(route) => ({memoId: route.query.memoId})*/},
   { path: '/add', name: 'Add', component: Addmemo, meta: { requiresAuth: true}},  
   { path: '/memos/:memoId', name: 'Read', component: Read, meta: { requiresAuth: true}, props : true},
   { path: '/signin', name:'Signin', component: Signin},
   { path: '/signup', name: 'Signup', component: Signup},
+  { path: '/admin/users', name: 'Users', component: Users},
 ]
 
 const router = new VueRouter({

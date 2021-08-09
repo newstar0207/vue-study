@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <router-link to='/add'>글 작성하기</router-link> --> 
-    <div class="mx-auto d-flex flex-wrap">
+    <div class="mx-auto d-flex flex-wrap justify-center">
       <v-card v-for="memo in memos" width="230" height="230" @dblclick="onClickMemo(memo.memoid)" :key="memo.memoid" class="mx-2 my-2">
         <v-card-text>
           <!-- <div>{{ memo.savedTime }}</div> -->

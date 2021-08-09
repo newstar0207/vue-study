@@ -28,6 +28,8 @@
       <v-spacer></v-spacer>
 
       <v-btn href="/add" text>add memo</v-btn>
+      <v-btn href="/" text>Home</v-btn>
+      <v-btn href="/signin" text>signin</v-btn>
 
       <!-- <router-link to="/add"><v-btn>add memo</v-btn></router-link> -->
 
