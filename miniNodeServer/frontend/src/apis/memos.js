@@ -33,6 +33,12 @@ export default{
             url: '/api/memos/' + memoId,
             method: 'delete',
         })
+    },
+    getAdminMemos(){
+        return sendMultipartRequest({
+            url: '/api/admin/memos',
+            method: 'get',
+        })
     }
     
 }

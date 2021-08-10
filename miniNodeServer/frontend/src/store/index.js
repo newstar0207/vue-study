@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import api from '../apis/sendRequest'
 // import user from './modules/user'
 // import admin from './modules/admin'
 
@@ -13,6 +14,7 @@ export default new Vuex.Store({
     },
     state: { // data
         accessToken: null,
+        userid: '',
     },
     getters: { // computed
         isAuth(state){
@@ -24,6 +26,7 @@ export default new Vuex.Store({
         signin(state, payload){
             state.accessToken = payload.accessToken;
             localStorage.setItem('accessToken', state.accessToken);
+            state.userid = payload.userid;
         },
         signout(state){
             state.accessToken = null;   
@@ -45,7 +48,7 @@ export default new Vuex.Store({
             return axios.post('/api/auth/login', data)
             .then(response => {
                 if(response.status == 200){ // 로그인 성공
-                    commit('signin', { accessToken: response.data.token})
+                    commit('signin', { accessToken: response.data.token, userid: response.data.userid})
                 }
             })
             .catch((error) => { // 에러 발생시 로그아웃처리
@@ -65,6 +68,18 @@ export default new Vuex.Store({
                 console.log('signup error')
             })
         },
+        getUserInfo({state}){
+            console.log(state.userid);
+            return api.get(`/api/users/${state.userid}`)
+            .then(response => {
+                if(response.status == 200) {
+                    return response.data;
+                }
+            }).
+            catch(() => {
+                console.log('getUserInfo error');
+            })
+        }
         
     }
 })

@@ -6,6 +6,7 @@ import Read from '../views/ReadMemo.vue'
 import Signin from '../views/Signin.vue'
 import Signup from '../views/Signup.vue'
 import Users from '../views/Users.vue'
+import Allmemo from '../views/Allmemo.vue'
 
 Vue.use(VueRouter)
 
@@ -16,6 +17,7 @@ const routes = [
   { path: '/signin', name:'Signin', component: Signin},
   { path: '/signup', name: 'Signup', component: Signup},
   { path: '/admin/users', name: 'Users', component: Users},
+  { path: '/admin/memos', name: 'Allmemo', component: Allmemo},
 ]
 
 const router = new VueRouter({

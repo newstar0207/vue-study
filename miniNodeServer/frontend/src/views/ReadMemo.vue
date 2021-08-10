@@ -88,7 +88,9 @@ export default {
 
 
             memoApi.putMemo(this.memoId, data)
-            .then()
+            .then(() => {
+                this.$router.push('/');
+            })
             .catch(err => {
                 console.log(err);
             })

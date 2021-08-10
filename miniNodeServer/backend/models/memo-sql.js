@@ -8,9 +8,10 @@ exports.createMemoSql = ()=>{
     fileUrl text,
     savedTime integer,
     foreign key(userid) references user(userid)
-  )`;
-};
-
+    on delete cascade
+    )`;
+  };
+  
 exports.selectAllMemoByUserSql = (userid)=>{
   return `select * from memo where userid='${userid}' order by savedTime desc`;
 };

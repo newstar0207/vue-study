@@ -30,19 +30,24 @@
       <v-btn href="/add" text>add memo</v-btn>
       <v-btn href="/" text>Home</v-btn>
       <v-btn href="/signin" text>signin</v-btn>
-
-      <!-- <router-link to="/add"><v-btn>add memo</v-btn></router-link> -->
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <v-btn @click="userInfo" text>info</v-btn>
     </v-app-bar>
-
+      <v-dialog v-model="userInfoDialog" width="350">
+        <v-card>
+          <v-card-title >User Information</v-card-title>
+          <div v-if="userinfo == undifined" class="d-flex justify-center align-center">
+            <v-col cols="6">
+              <v-card-text class="text-h6 font-italic">first signup</v-card-text>
+            </v-col>
+            <v-btn color="white">signin</v-btn>
+          </div>
+          <div v-else>
+            <v-card-text class="font-weight-medium">userid: {{ this.userinfo.userid }}</v-card-text>
+            <v-card-text class="font-weight-medium">name: {{ this.userinfo.name }}</v-card-text>
+            <v-card-text class="font-weight-medium">password: {{ this.userinfo.password }}</v-card-text>
+          </div>
+        </v-card>
+      </v-dialog>
     <v-main>
       <router-view/>
     </v-main>
@@ -56,6 +61,21 @@ export default {
 
   data: () => ({
     //
+    userInfoDialog : false,
+    userinfo : [],
   }),
+  methods:{
+    userInfo(){
+      this.userInfoDialog = true;
+      console.log('222222222222222222222222222');
+      this.$store.dispatch('getUserInfo')
+      .then((data) => {
+        this.userinfo = data;
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    }
+  }
 };
 </script>
