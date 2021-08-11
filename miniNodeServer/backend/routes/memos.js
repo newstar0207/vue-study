@@ -4,7 +4,7 @@ const db = require('../models/sqlite-db')
 const sql = require('../models/memo-sql')
 const authMiddleware = require('../middleware/auth');
 const multer = require('multer');
-const parser = require('body-parser')
+const parser = require('body-parser');
 
 const storage  = multer.diskStorage({
   destination(req, file, cb) {
