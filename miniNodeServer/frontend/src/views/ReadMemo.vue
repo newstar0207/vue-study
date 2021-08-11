@@ -109,19 +109,6 @@ export default {
         cancel(){
             this.$router.push('/');
         }
-        // memeoDelete(){
-        //     axios.delete('/memos/' + this.memo.memoid)
-        //     .then(response => {
-        //         if(response.status == 200){
-        //             this.$router.push('/memos/' + this.memo.memoid);
-        //         }else{
-        //             console.log('ReadMemo 96번째줄 오류');
-        //         }
-        //     })
-        //     .catch(err => {
-        //         console.log(err);
-        //     })
-        // },
     },
 }
 </script>

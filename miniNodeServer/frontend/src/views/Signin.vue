@@ -31,7 +31,7 @@ export default {
     },
     methods: {
         onSubmit(userid, password){
-            this.$store.dispatch('signin', { userid, password })
+            this.$store.dispatch('user/signin', { userid, password })
             .then(() => {
                 this.$router.push('/');
             })
